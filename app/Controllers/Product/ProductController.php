@@ -17,12 +17,11 @@ class ProductController
         $this->productService = new ProductService();
     }
 
-    public function index(): ResponseInterface
+    public function index(Request $request, Response $response): ResponseInterface
     {
         $products = $this->productService->getAllProducts();
 
-        $response = new Response();
-        $response->getBody()->write(json_encode($products));
+        $response->getBody()->write($products);
 
         return $response;
     }

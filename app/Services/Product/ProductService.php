@@ -13,7 +13,7 @@ class ProductService {
         $this->productModel = new Product();
     }
 
-    public function getAllProducts(): array 
+    public function getAllProducts(): string 
     {
         $products = [
             [
@@ -33,7 +33,7 @@ class ProductService {
             ],
         ];
 
-        return $products;
+        return json_encode($products);
 
     }
 
